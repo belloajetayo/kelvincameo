@@ -33,7 +33,12 @@ import {
 import entrance from "@/assets/entrance.jpg.asset.json";
 import exterior from "@/assets/exterior.jpg.asset.json";
 import evening from "@/assets/evening.jpg.asset.json";
-import singleRoomImg from "@/assets/single-room.jpg.asset.json";
+import apartmentLounge from "@/assets/apartment-lounge.jpg.asset.json";
+import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
+import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
+import roomPurple from "@/assets/room-purple.jpg.asset.json";
+import dining2 from "@/assets/dining-2.jpg.asset.json";
+
 import banquet from "@/assets/banquet-hall.jpg.asset.json";
 import pool from "@/assets/swimming-pool.jpg";
 import bar from "@/assets/bar.jpg";
