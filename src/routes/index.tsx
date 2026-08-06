@@ -14,7 +14,7 @@ import {
   Instagram,
   Facebook,
   Star,
-  MessageCircle,
+  MapPinned,
   CreditCard,
 } from "lucide-react";
 
