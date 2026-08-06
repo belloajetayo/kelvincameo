@@ -58,9 +58,12 @@ export function BookingForm() {
     setFailed("");
     setSaving(true);
 
-    const { data, error } = await supabase
+    const ref = Math.random().toString(36).slice(2, 10).toUpperCase();
+
+    const { error } = await supabase
       .from("bookings")
       .insert({
+        reference: ref,
         full_name: result.data.name,
         phone: result.data.phone,
         email: result.data.email,
@@ -69,9 +72,7 @@ export function BookingForm() {
         check_out: result.data.checkOut,
         guests: Number(result.data.guests),
         message: result.data.message || null,
-      })
-      .select("id")
-      .single();
+      });
 
     setSaving(false);
 
@@ -80,7 +81,7 @@ export function BookingForm() {
       return;
     }
 
-    setReference((data?.id ?? "").slice(0, 8).toUpperCase());
+    setReference(ref);
     setSent(true);
     setValues(empty);
   };
