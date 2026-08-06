@@ -73,27 +73,27 @@ export function BookingForm() {
         <div className="sm:col-span-2">
           <label className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">Full name</label>
           <input className={field} value={values.name} onChange={(e) => set("name", e.target.value)} maxLength={100} />
-          {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
+          {errors['name'] && <p className="mt-1 text-xs text-destructive">{errors['name']}</p>}
         </div>
         <div>
           <label className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">Phone</label>
           <input className={field} value={values.phone} onChange={(e) => set("phone", e.target.value)} maxLength={30} />
-          {errors.phone && <p className="mt-1 text-xs text-destructive">{errors.phone}</p>}
+          {errors['phone'] && <p className="mt-1 text-xs text-destructive">{errors['phone']}</p>}
         </div>
         <div>
           <label className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">Email</label>
           <input className={field} value={values.email} onChange={(e) => set("email", e.target.value)} maxLength={255} />
-          {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
+          {errors['email'] && <p className="mt-1 text-xs text-destructive">{errors['email']}</p>}
         </div>
         <div>
           <label className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">Check-in</label>
           <input type="date" className={field} value={values.checkIn} onChange={(e) => set("checkIn", e.target.value)} />
-          {errors.checkIn && <p className="mt-1 text-xs text-destructive">{errors.checkIn}</p>}
+          {errors['checkIn'] && <p className="mt-1 text-xs text-destructive">{errors['checkIn']}</p>}
         </div>
         <div>
           <label className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">Check-out</label>
           <input type="date" className={field} value={values.checkOut} onChange={(e) => set("checkOut", e.target.value)} />
-          {errors.checkOut && <p className="mt-1 text-xs text-destructive">{errors.checkOut}</p>}
+          {errors['checkOut'] && <p className="mt-1 text-xs text-destructive">{errors['checkOut']}</p>}
         </div>
         <div className="sm:col-span-2">
           <label className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">Room type</label>
@@ -106,7 +106,7 @@ export function BookingForm() {
             ))}
             <option value="Banquet Hall / Event">Banquet Hall / Event</option>
           </select>
-          {errors.roomType && <p className="mt-1 text-xs text-destructive">{errors.roomType}</p>}
+          {errors['roomType'] && <p className="mt-1 text-xs text-destructive">{errors['roomType']}</p>}
         </div>
         <div className="sm:col-span-2">
           <label className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">Message</label>
