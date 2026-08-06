@@ -14,12 +14,12 @@ import {
   Instagram,
   Facebook,
   Star,
-  MessageCircle,
   CreditCard,
 } from "lucide-react";
 
 import { Nav } from "@/components/site/Nav";
 import { BookingForm } from "@/components/site/BookingForm";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   singleRooms,
   suites,
@@ -40,10 +40,14 @@ import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
 import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
 import roomPurple from "@/assets/room-purple.jpg.asset.json";
 import dining2 from "@/assets/dining-2.jpg.asset.json";
+import logo from "@/assets/logo.jpg.asset.json";
+import barCounter from "@/assets/bar-counter.jpg.asset.json";
+import barLounge from "@/assets/bar-lounge.jpg.asset.json";
+import loungePoolTable from "@/assets/lounge-pool-table.jpg.asset.json";
+import loungeView from "@/assets/lounge-view.jpg.asset.json";
 
 import banquet from "@/assets/banquet-hall.jpg.asset.json";
 import pool from "@/assets/swimming-pool.jpg";
-import bar from "@/assets/bar.jpg";
 import restaurant from "@/assets/restaurant.jpg";
 
 const title = "Kelvin Cameo Resort Hotel — Luxury Stays in Suleja, Niger State";
@@ -124,10 +128,13 @@ const amenities = [
 
 const gallery = [
   { src: entrance.url, label: "entrance", span: "sm:row-span-2" },
-  { src: pool, label: "swimming-pool", span: "" },
+  { src: barCounter.url, label: "bar", span: "" },
   { src: banquet.url, label: "banquet-hall", span: "" },
-  { src: bar, label: "bar", span: "" },
-  { src: restaurant, label: "restaurant", span: "sm:row-span-2" },
+  { src: barLounge.url, label: "bar & lounge", span: "" },
+  { src: loungePoolTable.url, label: "games lounge", span: "sm:row-span-2" },
+  { src: loungeView.url, label: "lounge", span: "" },
+  { src: pool, label: "swimming-pool", span: "" },
+  { src: restaurant, label: "restaurant", span: "" },
   { src: apartmentLounge.url, label: "rooms/apartment", span: "" },
   { src: suiteLounge.url, label: "rooms/suites", span: "" },
   { src: roomPurple.url, label: "rooms/single-rooms", span: "" },
@@ -192,6 +199,13 @@ function Index() {
           />
           <div className="absolute inset-0 bg-linear-to-r from-navy-deep/90 via-navy-deep/70 to-navy-deep/40" />
           <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20">
+            <img
+              src={logo.url}
+              alt="Kelvin Cameo Resort Hotel logo"
+              width={256}
+              height={256}
+              className="mb-6 h-24 w-24 rounded-sm bg-white object-contain p-2 shadow-lg sm:h-28 sm:w-28"
+            />
             <p className="eyebrow">Madalla · Suleja · Niger State</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-medium leading-tight text-primary-foreground sm:text-6xl lg:text-7xl">
               Kelvin Cameo <span className="text-gold">Resort Hotel</span>
@@ -483,9 +497,9 @@ function Index() {
                       <a href="mailto:info@kelvincameoresort.com">info@kelvincameoresort.com</a>
                     </li>
                     <li className="flex gap-3">
-                      <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} />
+                      <WhatsAppIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#25D366]" />
                       <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4">
-                        Chat with us on WhatsApp
+                        WhatsApp inquiries: {PHONE}
                       </a>
                     </li>
                   </ul>
@@ -544,10 +558,11 @@ function Index() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3.5 text-sm font-medium text-navy-deep shadow-xl transition-transform hover:scale-105"
+        aria-label="Chat with us on WhatsApp"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 text-sm font-medium text-navy-deep shadow-xl transition-transform hover:scale-105"
       >
-        <MessageCircle className="h-5 w-5" strokeWidth={2} />
-        <span className="hidden sm:inline">Book via WhatsApp</span>
+        <WhatsAppIcon className="h-6 w-6" />
+        <span className="hidden sm:inline">WhatsApp Inquiries</span>
       </a>
     </div>
   );
