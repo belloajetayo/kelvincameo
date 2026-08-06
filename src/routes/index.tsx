@@ -14,7 +14,6 @@ import {
   Instagram,
   Facebook,
   Star,
-  Star,
   CreditCard,
 } from "lucide-react";
 
