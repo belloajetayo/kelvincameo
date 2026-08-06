@@ -128,10 +128,13 @@ const amenities = [
 
 const gallery = [
   { src: entrance.url, label: "entrance", span: "sm:row-span-2" },
-  { src: pool, label: "swimming-pool", span: "" },
+  { src: barCounter.url, label: "bar", span: "" },
   { src: banquet.url, label: "banquet-hall", span: "" },
-  { src: bar, label: "bar", span: "" },
-  { src: restaurant, label: "restaurant", span: "sm:row-span-2" },
+  { src: barLounge.url, label: "bar & lounge", span: "" },
+  { src: loungePoolTable.url, label: "games lounge", span: "sm:row-span-2" },
+  { src: loungeView.url, label: "lounge", span: "" },
+  { src: pool, label: "swimming-pool", span: "" },
+  { src: restaurant.url ?? restaurant, label: "restaurant", span: "" },
   { src: apartmentLounge.url, label: "rooms/apartment", span: "" },
   { src: suiteLounge.url, label: "rooms/suites", span: "" },
   { src: roomPurple.url, label: "rooms/single-rooms", span: "" },
