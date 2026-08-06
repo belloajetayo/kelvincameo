@@ -491,9 +491,9 @@ function Index() {
                       <a href="mailto:info@kelvincameoresort.com">info@kelvincameoresort.com</a>
                     </li>
                     <li className="flex gap-3">
-                      <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} />
+                      <WhatsAppIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#25D366]" />
                       <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4">
-                        Chat with us on WhatsApp
+                        WhatsApp inquiries: {PHONE}
                       </a>
                     </li>
                   </ul>
