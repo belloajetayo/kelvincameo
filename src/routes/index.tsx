@@ -121,10 +121,31 @@ const gallery = [
   { src: banquet.url, label: "banquet-hall", span: "" },
   { src: bar, label: "bar", span: "" },
   { src: restaurant, label: "restaurant", span: "sm:row-span-2" },
-  { src: singleRoomImg.url, label: "reception", span: "" },
+  { src: apartmentLounge.url, label: "rooms/apartment", span: "" },
+  { src: suiteLounge.url, label: "rooms/suites", span: "" },
+  { src: roomPurple.url, label: "rooms/single-rooms", span: "" },
+  { src: apartmentHall.url, label: "reception", span: "" },
+  { src: dining2.url, label: "rooms/apartment", span: "" },
   { src: exterior.url, label: "entrance", span: "" },
   { src: evening.url, label: "entrance", span: "" },
 ];
+
+const partners = [
+  "Booking.com",
+  "Hotels.ng",
+  "Agoda",
+  "Expedia",
+  "Jumia Travel",
+  "Airbnb",
+];
+
+const payments = [
+  { label: "Paystack", note: "Cards & bank transfer" },
+  { label: "Flutterwave", note: "Cards, USSD & mobile money" },
+  { label: "Bank Transfer", note: "Direct NGN transfer on arrival" },
+  { label: "POS / Cash", note: "Accepted at reception" },
+];
+
 
 const reviews = [
   {
