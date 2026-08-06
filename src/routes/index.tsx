@@ -134,7 +134,7 @@ const gallery = [
   { src: loungePoolTable.url, label: "games lounge", span: "sm:row-span-2" },
   { src: loungeView.url, label: "lounge", span: "" },
   { src: pool, label: "swimming-pool", span: "" },
-  { src: restaurant.url ?? restaurant, label: "restaurant", span: "" },
+  { src: restaurant, label: "restaurant", span: "" },
   { src: apartmentLounge.url, label: "rooms/apartment", span: "" },
   { src: suiteLounge.url, label: "rooms/suites", span: "" },
   { src: roomPurple.url, label: "rooms/single-rooms", span: "" },
