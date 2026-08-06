@@ -20,6 +20,7 @@ import {
 
 import { Nav } from "@/components/site/Nav";
 import { BookingForm } from "@/components/site/BookingForm";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   singleRooms,
   suites,
