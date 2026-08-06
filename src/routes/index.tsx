@@ -405,8 +405,54 @@ function Index() {
                 </blockquote>
               ))}
             </div>
+            <div className="mt-10 text-center">
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-sm border border-navy px-6 py-3 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-primary-foreground"
+              >
+                <Star className="h-4 w-4" /> Read & write our Google reviews
+              </a>
+            </div>
           </div>
         </section>
+
+        {/* PARTNERS */}
+        <section className="border-y border-border py-12">
+          <div className="mx-auto max-w-7xl px-5 text-center">
+            <p className="eyebrow">Also find us on</p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+              {partners.map((p) => (
+                <span key={p} className="font-display text-lg text-muted-foreground">
+                  {p}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PAYMENTS */}
+        <section className="section-pad">
+          <div className="mx-auto max-w-7xl px-5">
+            <SectionHeading
+              eyebrow="Payments"
+              heading="Pay the Nigerian way"
+              copy="Secure naira payments on booking, or settle at reception. Card, transfer, USSD and cash all welcome."
+            />
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {payments.map((p) => (
+                <div key={p.label} className="rounded-sm border border-border bg-card p-6 text-center">
+                  <CreditCard className="mx-auto h-6 w-6 text-gold" strokeWidth={1.5} />
+                  <h3 className="mt-3 font-display text-lg font-medium">{p.label}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{p.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
 
         {/* CONTACT */}
         <section id="contact" className="section-pad">
