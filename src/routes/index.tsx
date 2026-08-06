@@ -200,6 +200,13 @@ function Index() {
           />
           <div className="absolute inset-0 bg-linear-to-r from-navy-deep/90 via-navy-deep/70 to-navy-deep/40" />
           <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20">
+            <img
+              src={logo.url}
+              alt="Kelvin Cameo Resort Hotel logo"
+              width={256}
+              height={256}
+              className="mb-6 h-24 w-24 rounded-sm bg-white object-contain p-2 shadow-lg sm:h-28 sm:w-28"
+            />
             <p className="eyebrow">Madalla · Suleja · Niger State</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-medium leading-tight text-primary-foreground sm:text-6xl lg:text-7xl">
               Kelvin Cameo <span className="text-gold">Resort Hotel</span>
