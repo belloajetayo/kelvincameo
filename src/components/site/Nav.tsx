@@ -27,12 +27,21 @@ export function Nav() {
       }`}
     >
       <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4">
-        <a href="#hero" className="min-w-0">
-          <span className="block truncate font-display text-base font-semibold tracking-wide text-primary-foreground sm:text-lg">
-            Kelvin Cameo <span className="text-gold">Resort Hotel</span>
-          </span>
-          <span className="block text-[10px] tracking-[0.25em] uppercase text-primary-foreground/60">
-            Suleja · Niger State
+        <a href="#hero" className="flex min-w-0 items-center gap-3">
+          <img
+            src={logo.url}
+            alt="Kelvin Cameo Resort Hotel logo"
+            width={96}
+            height={96}
+            className="h-11 w-11 shrink-0 rounded-sm bg-white object-contain p-1"
+          />
+          <span className="min-w-0">
+            <span className="block truncate font-display text-base font-semibold tracking-wide text-primary-foreground sm:text-lg">
+              Kelvin Cameo <span className="text-gold">Resort Hotel</span>
+            </span>
+            <span className="block text-[10px] tracking-[0.25em] uppercase text-primary-foreground/60">
+              Relax · Recharge · Reconnect
+            </span>
           </span>
         </a>
 
