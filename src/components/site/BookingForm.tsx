@@ -21,7 +21,7 @@ declare global {
   }
 }
 
-const PAYSTACK_PUBLIC_KEY = "pk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // Replace with real key
+const PAYSTACK_PUBLIC_KEY = "pk_test_fe42fdcfcdb27f36b88b7ebe39ec910bedcda0a7";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your full name").max(100),
