@@ -74,7 +74,9 @@ function StaffDashboard() {
       const { data: userData } = await supabase.auth.getUser();
       setEmail(userData.user?.email ?? "");
       const { data: roles } = await supabase.from("user_roles").select("role");
-      const ok = (roles ?? []).some((r) => r.role === "admin" || r.role === "staff");
+      const STAFF_EMAILS = ["kelvincameo73@gmail.com"];
+      const userEmail = userData.user?.email ?? "";
+      const ok = STAFF_EMAILS.includes(userEmail) || (roles ?? []).some((r) => r.role === "admin" || r.role === "staff");
       setAllowed(ok);
       if (ok) await load();
       else setLoading(false);
