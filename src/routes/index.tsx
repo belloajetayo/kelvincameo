@@ -199,26 +199,28 @@ function Index() {
           />
           <div className="absolute inset-0 bg-linear-to-r from-navy-deep/90 via-navy-deep/70 to-navy-deep/40" />
           <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20">
-            <p className="eyebrow">Suleja · Niger State</p>
+            <p className="eyebrow tracking-[0.25em]">Suleja · Niger State · Nigeria</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-medium leading-tight text-primary-foreground sm:text-6xl lg:text-7xl">
-              Kelvin Cameo <span className="text-gold">Resort Hotel</span>
+              Where Every Stay
+              <br />
+              Feels Like <span className="text-gold">Home</span>
             </h1>
             <p className="mt-5 max-w-xl text-base text-primary-foreground/80 sm:text-lg">
-              Distinguished comfort on the Abuja–Kaduna corridor. Rooms, suites and apartments with
-              a pool, restaurant and grand banquet hall.
+              Kelvin Cameo Resort Hotel — luxury rooms, suites and apartments just minutes from Abuja.
+              Pool, restaurant, bar and a grand banquet hall for up to 1,000 guests.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href="#contact"
                 className="rounded-sm bg-gold px-7 py-3.5 text-sm font-medium tracking-wide text-navy-deep transition-opacity hover:opacity-90"
               >
-                Book Now
+                Reserve a Room
               </a>
               <a
                 href="#rooms"
                 className="rounded-sm border border-primary-foreground/40 px-7 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:border-gold hover:text-gold"
               >
-                View Rooms
+                Explore Rooms
               </a>
             </div>
           </div>
@@ -230,17 +232,17 @@ function Index() {
             <div>
               <p className="eyebrow">About the hotel</p>
               <h2 className="mt-3 text-3xl font-medium sm:text-4xl">
-                Warm hospitality, minutes from Abuja
+                The finest retreat on the Abuja–Kaduna corridor
               </h2>
               <p className="mt-5 text-muted-foreground">
-                Kelvin Cameo Resort Hotel sits in the heart of Suleja — a short drive from
-                Abuja city centre and the airport corridor. Our property blends contemporary
-                architecture with genuinely warm Nigerian hospitality.
+                Nestled in the heart of Suleja, Kelvin Cameo Resort Hotel is where business travellers
+                unwind, families celebrate, and couples escape. Just minutes from Abuja, we offer
+                world-class comfort with the warmth that only true Nigerian hospitality can provide.
               </p>
               <p className="mt-4 text-muted-foreground">
-                Whether you are here for business, a weekend escape or a celebration, you will find
-                immaculate rooms, an inviting pool, an unhurried bar and restaurant, and a team that
-                remembers your name.
+                From our immaculate rooms and suites to our sparkling pool, award-worthy restaurant
+                and grand banquet hall — every detail is designed to make you feel extraordinary.
+                Come as a guest, leave as family.
               </p>
             </div>
             <div className="relative">
@@ -468,8 +470,8 @@ function Index() {
           <div className="mx-auto max-w-7xl px-5">
             <SectionHeading
               eyebrow="Reservations"
-              heading="Book your stay"
-              copy="Send an inquiry, call reception, or reach us instantly on WhatsApp."
+              heading="Ready to experience Kelvin Cameo?"
+              copy="Book directly for the best rates. Pay securely with Paystack — cards, bank transfer and USSD all accepted."
             />
             <div className="mt-12 grid items-start gap-8 lg:grid-cols-2">
               <div className="lg:sticky lg:top-28">
@@ -570,7 +572,7 @@ function Index() {
           href="#contact"
           className="block rounded-sm bg-gold py-3 text-center text-sm font-medium tracking-wide text-navy-deep"
         >
-          Book Now
+          Reserve Now — Best Rate Guaranteed
         </a>
       </div>
     </div>
