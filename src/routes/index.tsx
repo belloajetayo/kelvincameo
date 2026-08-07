@@ -471,8 +471,11 @@ function Index() {
               heading="Book your stay"
               copy="Send an inquiry, call reception, or reach us instantly on WhatsApp."
             />
-            <div className="mt-12 grid gap-8 lg:grid-cols-2">
-              <BookingForm />
+            <div className="mt-12 grid items-start gap-8 lg:grid-cols-2">
+              <div className="lg:sticky lg:top-28">
+                <BookingForm />
+              </div>
+
 
               <div className="space-y-6">
                 <div className="rounded-sm border border-border bg-card p-6">
