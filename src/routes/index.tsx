@@ -447,7 +447,7 @@ function Index() {
             <SectionHeading
               eyebrow="Payments"
               heading="Pay the Nigerian way"
-              copy="Secure naira payments on booking, or settle at reception. Card, transfer, USSD and cash all welcome."
+              copy="Reserve online free of charge and settle at reception — card, bank transfer, USSD, POS or cash all welcome."
             />
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {payments.map((p) => (
@@ -545,8 +545,11 @@ function Index() {
             <p className="mt-3">{SOCIAL}</p>
           </div>
         </div>
-        <div className="mx-auto mt-10 max-w-7xl border-t border-primary-foreground/10 px-5 pt-6 text-xs">
-          © {new Date().getFullYear()} Kelvin Cameo Resort Hotel. All rights reserved.
+        <div className="mx-auto mt-10 flex max-w-7xl flex-wrap items-center justify-between gap-3 border-t border-primary-foreground/10 px-5 pt-6 text-xs">
+          <span>© {new Date().getFullYear()} Kelvin Cameo Resort Hotel. All rights reserved.</span>
+          <a href="/auth" className="tracking-widest uppercase hover:text-gold">
+            Staff Login
+          </a>
         </div>
       </footer>
 

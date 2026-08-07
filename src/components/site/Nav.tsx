@@ -94,6 +94,12 @@ export function Nav() {
             >
               Book Now
             </a>
+            <a
+              href="/auth"
+              className="mt-3 text-center text-xs tracking-widest uppercase text-primary-foreground/50"
+            >
+              Staff Login
+            </a>
           </div>
         </div>
       )}
