@@ -447,7 +447,7 @@ function Index() {
             <SectionHeading
               eyebrow="Payments"
               heading="Pay the Nigerian way"
-              copy="Secure naira payments on booking, or settle at reception. Card, transfer, USSD and cash all welcome."
+              copy="Reserve online free of charge and settle at reception — card, bank transfer, USSD, POS or cash all welcome."
             />
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {payments.map((p) => (
