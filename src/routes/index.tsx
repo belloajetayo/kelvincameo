@@ -555,11 +555,22 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 text-sm font-medium text-navy-deep shadow-xl transition-transform hover:scale-105"
+        className="fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 text-sm font-medium text-navy-deep shadow-xl transition-transform hover:scale-105 sm:bottom-5"
       >
         <WhatsAppIcon className="h-6 w-6" />
         <span className="hidden sm:inline">WhatsApp Inquiries</span>
       </a>
+
+      {/* Sticky booking bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-navy-deep/95 px-4 py-3 backdrop-blur-md sm:hidden">
+        <a
+          href="#contact"
+          className="block rounded-sm bg-gold py-3 text-center text-sm font-medium tracking-wide text-navy-deep"
+        >
+          Book Now
+        </a>
+      </div>
     </div>
   );
+}
 }
