@@ -37,7 +37,7 @@ export const allRoomNames = [...singleRooms, ...suites, ...apartments].map((r) =
 export const WHATSAPP_NUMBER = "2348055558197";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20Kelvin%20Cameo%20Resort%20Hotel%2C%20I%27d%20like%20to%20make%20a%20booking`;
 export const PHONE = "+234 805 555 8197";
-export const ADDRESS = "Madalla, Suleja, Niger State, Nigeria";
+export const ADDRESS = "Suleja, Niger State, Nigeria";
 export const SOCIAL = "@kelvincameoresort_ng";
 export const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/maps/search/?api=1&query=Kelvin+Cameo+Resort+Hotel+Madalla+Suleja";
+  "https://www.google.com/maps/search/?api=1&query=Kelvin+Cameo+Resort+Hotel+Suleja";

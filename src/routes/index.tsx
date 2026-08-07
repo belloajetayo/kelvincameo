@@ -40,7 +40,7 @@ import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
 import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
 import roomPurple from "@/assets/room-purple.jpg.asset.json";
 import dining2 from "@/assets/dining-2.jpg.asset.json";
-import logo from "@/assets/logo.jpg.asset.json";
+
 import barCounter from "@/assets/bar-counter.jpg.asset.json";
 import barLounge from "@/assets/bar-lounge.jpg.asset.json";
 import loungePoolTable from "@/assets/lounge-pool-table.jpg.asset.json";
@@ -52,7 +52,7 @@ import restaurant from "@/assets/restaurant.jpg";
 
 const title = "Kelvin Cameo Resort Hotel — Luxury Stays in Suleja, Niger State";
 const description =
-  "Elegant rooms, suites and apartments in Madalla, Suleja. Pool, bar, restaurant and a 1,000-guest banquet hall. Book your stay at Kelvin Cameo Resort Hotel.";
+  "Elegant rooms, suites and apartments in Suleja. Pool, bar, restaurant and a 1,000-guest banquet hall. Book your stay at Kelvin Cameo Resort Hotel.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -233,7 +233,7 @@ function Index() {
                 Warm hospitality, minutes from Abuja
               </h2>
               <p className="mt-5 text-muted-foreground">
-                Kelvin Cameo Resort Hotel sits in the heart of Madalla, Suleja — a short drive from
+                Kelvin Cameo Resort Hotel sits in the heart of Suleja — a short drive from
                 Abuja city centre and the airport corridor. Our property blends contemporary
                 architecture with genuinely warm Nigerian hospitality.
               </p>
@@ -499,8 +499,8 @@ function Index() {
                 </div>
                 <div className="overflow-hidden rounded-sm border border-border">
                   <iframe
-                    title="Map to Kelvin Cameo Resort Hotel, Madalla, Suleja"
-                    src="https://www.google.com/maps?q=Madalla%20Suleja%20Niger%20State%20Nigeria&output=embed"
+                    title="Map to Kelvin Cameo Resort Hotel, Suleja"
+                    src="https://www.google.com/maps?q=Kelvin%20Cameo%20Resort%20Hotel%20Suleja%20Niger%20State%20Nigeria&output=embed"
                     className="h-[340px] w-full"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
