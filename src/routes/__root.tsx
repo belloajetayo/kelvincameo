@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Kelvin Cameo Resort Hotel — elegant rooms, suites, apartments and banquet hall in Madalla, Suleja, Niger State.",
+          "Kelvin Cameo Resort Hotel — elegant rooms, suites, apartments and banquet hall in Suleja, Niger State.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

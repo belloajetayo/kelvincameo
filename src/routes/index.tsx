@@ -40,7 +40,7 @@ import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
 import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
 import roomPurple from "@/assets/room-purple.jpg.asset.json";
 import dining2 from "@/assets/dining-2.jpg.asset.json";
-import logo from "@/assets/logo.jpg.asset.json";
+
 import barCounter from "@/assets/bar-counter.jpg.asset.json";
 import barLounge from "@/assets/bar-lounge.jpg.asset.json";
 import loungePoolTable from "@/assets/lounge-pool-table.jpg.asset.json";
@@ -52,7 +52,7 @@ import restaurant from "@/assets/restaurant.jpg";
 
 const title = "Kelvin Cameo Resort Hotel — Luxury Stays in Suleja, Niger State";
 const description =
-  "Elegant rooms, suites and apartments in Madalla, Suleja. Pool, bar, restaurant and a 1,000-guest banquet hall. Book your stay at Kelvin Cameo Resort Hotel.";
+  "Elegant rooms, suites and apartments in Suleja. Pool, bar, restaurant and a 1,000-guest banquet hall. Book your stay at Kelvin Cameo Resort Hotel.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -199,14 +199,7 @@ function Index() {
           />
           <div className="absolute inset-0 bg-linear-to-r from-navy-deep/90 via-navy-deep/70 to-navy-deep/40" />
           <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20">
-            <img
-              src={logo.url}
-              alt="Kelvin Cameo Resort Hotel logo"
-              width={256}
-              height={256}
-              className="mb-6 h-24 w-24 rounded-sm bg-white object-contain p-2 shadow-lg sm:h-28 sm:w-28"
-            />
-            <p className="eyebrow">Madalla · Suleja · Niger State</p>
+            <p className="eyebrow">Suleja · Niger State</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-medium leading-tight text-primary-foreground sm:text-6xl lg:text-7xl">
               Kelvin Cameo <span className="text-gold">Resort Hotel</span>
             </h1>
@@ -240,7 +233,7 @@ function Index() {
                 Warm hospitality, minutes from Abuja
               </h2>
               <p className="mt-5 text-muted-foreground">
-                Kelvin Cameo Resort Hotel sits in the heart of Madalla, Suleja — a short drive from
+                Kelvin Cameo Resort Hotel sits in the heart of Suleja — a short drive from
                 Abuja city centre and the airport corridor. Our property blends contemporary
                 architecture with genuinely warm Nigerian hospitality.
               </p>
@@ -471,15 +464,18 @@ function Index() {
 
 
         {/* CONTACT */}
-        <section id="contact" className="section-pad">
+        <section id="contact" className="section-pad pb-28 lg:pb-20">
           <div className="mx-auto max-w-7xl px-5">
             <SectionHeading
               eyebrow="Reservations"
               heading="Book your stay"
               copy="Send an inquiry, call reception, or reach us instantly on WhatsApp."
             />
-            <div className="mt-12 grid gap-8 lg:grid-cols-2">
-              <BookingForm />
+            <div className="mt-12 grid items-start gap-8 lg:grid-cols-2">
+              <div className="lg:sticky lg:top-28">
+                <BookingForm />
+              </div>
+
 
               <div className="space-y-6">
                 <div className="rounded-sm border border-border bg-card p-6">
@@ -506,8 +502,8 @@ function Index() {
                 </div>
                 <div className="overflow-hidden rounded-sm border border-border">
                   <iframe
-                    title="Map to Kelvin Cameo Resort Hotel, Madalla, Suleja"
-                    src="https://www.google.com/maps?q=Madalla%20Suleja%20Niger%20State%20Nigeria&output=embed"
+                    title="Map to Kelvin Cameo Resort Hotel, Suleja"
+                    src="https://www.google.com/maps?q=Kelvin%20Cameo%20Resort%20Hotel%20Suleja%20Niger%20State%20Nigeria&output=embed"
                     className="h-[340px] w-full"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -559,11 +555,21 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 text-sm font-medium text-navy-deep shadow-xl transition-transform hover:scale-105"
+        className="fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 text-sm font-medium text-navy-deep shadow-xl transition-transform hover:scale-105 sm:bottom-5"
       >
         <WhatsAppIcon className="h-6 w-6" />
         <span className="hidden sm:inline">WhatsApp Inquiries</span>
       </a>
+
+      {/* Sticky booking bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-navy-deep/95 px-4 py-3 backdrop-blur-md sm:hidden">
+        <a
+          href="#contact"
+          className="block rounded-sm bg-gold py-3 text-center text-sm font-medium tracking-wide text-navy-deep"
+        >
+          Book Now
+        </a>
+      </div>
     </div>
   );
 }
