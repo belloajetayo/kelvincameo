@@ -464,7 +464,7 @@ function Index() {
 
 
         {/* CONTACT */}
-        <section id="contact" className="section-pad">
+        <section id="contact" className="section-pad pb-28 lg:pb-20">
           <div className="mx-auto max-w-7xl px-5">
             <SectionHeading
               eyebrow="Reservations"
