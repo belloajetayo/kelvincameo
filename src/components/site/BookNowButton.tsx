@@ -1,17 +1,16 @@
-import { ASUNJI_BOOKING_URL } from "./data";
-
 export function openBookingPopup() {
+  const url = "https://kelvin-cameo-resort-hotel.asunji.com/book?property=54";
   const w = 1100;
   const h = 800;
   const left = Math.max(0, (window.screen.width - w) / 2);
   const top = Math.max(0, (window.screen.height - h) / 2);
   const popup = window.open(
-    ASUNJI_BOOKING_URL,
+    url,
     "asunji-booking",
     `popup=yes,width=${w},height=${h},left=${left},top=${top},scrollbars=yes,resizable=yes`,
   );
   if (popup) popup.focus();
-  else window.open(ASUNJI_BOOKING_URL, "_blank", "noopener,noreferrer");
+  else window.open(url, "_blank", "noopener,noreferrer");
 }
 
 export function BookNowButton({
@@ -22,15 +21,24 @@ export function BookNowButton({
   label?: string;
 }) {
   return (
-    <button
-      type="button"
-      onClick={openBookingPopup}
-      className={
-        className ||
-        "rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-7 py-3.5 text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02]"
-      }
+    <a
+      href="https://kelvin-cameo-resort-hotel.asunji.com/book?property=54"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-block",
+        background: "#0071C2",
+        color: "#fff",
+        fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,sans-serif",
+        fontSize: "14px",
+        fontWeight: 600,
+        padding: "11px 22px",
+        borderRadius: "6px",
+        textDecoration: "none",
+      }}
+      className={className || ""}
     >
       {label}
-    </button>
+    </a>
   );
 }
