@@ -563,9 +563,15 @@ function Index() {
         </div>
         <div className="mx-auto mt-10 flex max-w-7xl flex-wrap items-center justify-between gap-3 border-t border-primary-foreground/10 px-5 pt-6 text-xs">
           <span>© {new Date().getFullYear()} Kelvin Cameo Resort Hotel. All rights reserved.</span>
-          <a href="/auth" className="tracking-widest uppercase hover:text-gold">
+          <a
+            href={ASUNJI_STAFF_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tracking-widest uppercase hover:text-gold"
+          >
             Staff Login
           </a>
+
         </div>
       </footer>
 
