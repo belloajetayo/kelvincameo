@@ -41,3 +41,8 @@ export const ADDRESS = "Suleja, Niger State, Nigeria";
 export const SOCIAL = "@kelvincameoresort_ng";
 export const GOOGLE_REVIEWS_URL =
   "https://www.google.com/maps/search/?api=1&query=Kelvin+Cameo+Resort+Hotel+Suleja";
+
+export const ASUNJI_BOOKING_URL = "https://kelvin-cameo-resort-hotel.asunji.com/book?property=54";
+export const ASUNJI_BOOKING_EMBED_URL =
+  "https://kelvin-cameo-resort-hotel.asunji.com/book?property=54&headless=1";
+export const ASUNJI_STAFF_URL = "https://kelvin-cameo-resort-hotel.asunji.com/app";

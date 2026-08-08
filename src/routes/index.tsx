@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 
 import { Nav } from "@/components/site/Nav";
-import { BookingForm } from "@/components/site/BookingForm";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   singleRooms,
@@ -30,7 +29,11 @@ import {
   ADDRESS,
   SOCIAL,
   GOOGLE_REVIEWS_URL,
+  ASUNJI_BOOKING_URL,
+  ASUNJI_BOOKING_EMBED_URL,
+  ASUNJI_STAFF_URL,
 } from "@/components/site/data";
+
 
 import entrance from "@/assets/entrance.jpg.asset.json";
 import exterior from "@/assets/exterior.jpg.asset.json";
@@ -211,11 +214,14 @@ function Index() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a
-                href="#contact"
-                className="rounded-sm bg-gold px-7 py-3.5 text-sm font-medium tracking-wide text-navy-deep transition-opacity hover:opacity-90"
+                href={ASUNJI_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-7 py-3.5 text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02]"
               >
-                Reserve a Room
+                Book Now
               </a>
+
               <a
                 href="#rooms"
                 className="rounded-sm border border-primary-foreground/40 px-7 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:border-gold hover:text-gold"
@@ -474,9 +480,17 @@ function Index() {
               copy="Book directly for the best rates. Pay securely with Paystack — cards, bank transfer and USSD all accepted."
             />
             <div className="mt-12 grid items-start gap-8 lg:grid-cols-2">
-              <div className="lg:sticky lg:top-28">
-                <BookingForm />
+              <div className="overflow-hidden rounded-sm border border-border bg-card lg:sticky lg:top-28">
+                <iframe
+                  src={ASUNJI_BOOKING_EMBED_URL}
+                  width="100%"
+                  height={720}
+                  style={{ border: 0, maxWidth: "100%" }}
+                  loading="lazy"
+                  title="Headless booking engine"
+                />
               </div>
+
 
 
               <div className="space-y-6">
@@ -549,9 +563,15 @@ function Index() {
         </div>
         <div className="mx-auto mt-10 flex max-w-7xl flex-wrap items-center justify-between gap-3 border-t border-primary-foreground/10 px-5 pt-6 text-xs">
           <span>© {new Date().getFullYear()} Kelvin Cameo Resort Hotel. All rights reserved.</span>
-          <a href="/auth" className="tracking-widest uppercase hover:text-gold">
+          <a
+            href={ASUNJI_STAFF_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tracking-widest uppercase hover:text-gold"
+          >
             Staff Login
           </a>
+
         </div>
       </footer>
 
@@ -567,14 +587,22 @@ function Index() {
       </a>
 
       {/* Sticky booking bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-navy-deep/95 px-4 py-3 backdrop-blur-md sm:hidden">
-        <a
-          href="#contact"
-          className="block rounded-sm bg-gold py-3 text-center text-sm font-medium tracking-wide text-navy-deep"
-        >
-          Reserve Now — Best Rate Guaranteed
-        </a>
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-navy-deep/95 px-4 py-3 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+          <p className="hidden text-sm text-primary-foreground/80 sm:block">
+            Best rate guaranteed when you book direct.
+          </p>
+          <a
+            href={ASUNJI_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-6 py-3 text-center text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02] sm:w-auto"
+          >
+            Book Now
+          </a>
+        </div>
       </div>
+
     </div>
   );
 }
