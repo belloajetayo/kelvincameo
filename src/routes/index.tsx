@@ -567,14 +567,22 @@ function Index() {
       </a>
 
       {/* Sticky booking bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-navy-deep/95 px-4 py-3 backdrop-blur-md sm:hidden">
-        <a
-          href="#contact"
-          className="block rounded-sm bg-gold py-3 text-center text-sm font-medium tracking-wide text-navy-deep"
-        >
-          Reserve Now — Best Rate Guaranteed
-        </a>
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-navy-deep/95 px-4 py-3 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+          <p className="hidden text-sm text-primary-foreground/80 sm:block">
+            Best rate guaranteed when you book direct.
+          </p>
+          <a
+            href={ASUNJI_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-6 py-3 text-center text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02] sm:w-auto"
+          >
+            Book Now
+          </a>
+        </div>
       </div>
+
     </div>
   );
 }
