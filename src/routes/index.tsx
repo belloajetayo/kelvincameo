@@ -468,14 +468,7 @@ function Index() {
             />
             <div className="mt-12 grid items-start gap-8 lg:grid-cols-2">
               <div className="overflow-hidden rounded-sm border border-border bg-card lg:sticky lg:top-28">
-                <iframe
-                  src={ASUNJI_BOOKING_EMBED_URL}
-                  width="100%"
-                  height={720}
-                  style={{ border: 0, maxWidth: "100%" }}
-                  loading="lazy"
-                  title="Headless booking engine"
-                />
+                <BookingFrame />
               </div>
 
 

@@ -57,14 +57,7 @@ export function Nav() {
               {l.label}
             </a>
           ))}
-          <a
-            href={ASUNJI_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-md transition-transform hover:scale-[1.03]"
-          >
-            Book Now
-          </a>
+          <BookNowButton className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-md transition-transform hover:scale-[1.03]" />
         </div>
 
         <button
