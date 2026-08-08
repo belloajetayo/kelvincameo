@@ -559,18 +559,18 @@ function Index() {
         rel="noreferrer"
         aria-label="Chat with us on WhatsApp"
         title="WhatsApp inquiries"
-        className="fixed bottom-20 right-4 z-50 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-navy-deep shadow-lg transition-transform hover:scale-110 sm:bottom-4"
+        className="fixed bottom-20 right-4 z-50 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-navy-deep shadow-lg transition-transform hover:scale-110 sm:bottom-6"
       >
         <WhatsAppIcon className="h-4 w-4" />
       </a>
 
-      {/* Sticky booking bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-navy-deep/95 px-4 py-3 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-          <p className="hidden text-sm text-primary-foreground/80 sm:block">
+      {/* Sticky booking bar - slim */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/20 bg-navy-deep/95 px-4 py-2 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3">
+          <p className="hidden text-xs text-primary-foreground/70 sm:block">
             Best rate guaranteed when you book direct.
           </p>
-          <BookNowButton className="block w-full rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-6 py-3 text-center text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02] sm:w-auto" />
+          <BookNowButton className="block w-full rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-4 py-2 text-center text-xs font-semibold tracking-wide text-navy-deep shadow transition-transform hover:scale-[1.02] sm:w-auto" />
         </div>
       </div>
 
