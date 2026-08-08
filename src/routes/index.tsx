@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 
 import { Nav } from "@/components/site/Nav";
+import { BookNowButton } from "@/components/site/BookNowButton";
+import { BookingFrame } from "@/components/site/BookingFrame";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   singleRooms,
@@ -107,12 +109,7 @@ function RoomCard({ room }: { room: Room }) {
           <span className="text-sm text-muted-foreground"> / night</span>
         </p>
         <p className="mt-1 text-xs text-muted-foreground">Weekend rates may vary</p>
-        <a
-          href="#contact"
-          className="mt-4 inline-flex items-center justify-center rounded-sm border border-navy px-4 py-2.5 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-primary-foreground"
-        >
-          Inquire / Book
-        </a>
+        <BookNowButton className="mt-4 inline-flex items-center justify-center rounded-sm border border-navy px-4 py-2.5 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-primary-foreground" />
       </div>
     </article>
   );
@@ -213,14 +210,7 @@ function Index() {
               Pool, restaurant, bar and a grand banquet hall for up to 1,000 guests.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a
-                href={ASUNJI_BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-7 py-3.5 text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02]"
-              >
-                Book Now
-              </a>
+              <BookNowButton className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-7 py-3.5 text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02]" />
 
               <a
                 href="#rooms"
@@ -296,9 +286,6 @@ function Index() {
                 <RoomCard key={r.name} room={r} />
               ))}
             </div>
-            <p className="mt-6 rounded-sm border-l-2 border-gold bg-card px-4 py-3 text-sm text-muted-foreground">
-              A refundable caution fee of ₦50,000 applies to all apartment bookings.
-            </p>
           </div>
         </section>
 
@@ -327,22 +314,27 @@ function Index() {
                 A look around the resort
               </h2>
             </div>
-            <div className="mt-12 grid auto-rows-[220px] grid-cols-2 gap-4 lg:grid-cols-4">
-              {gallery.map((g, i) => (
-                <figure key={i} className={`group relative overflow-hidden rounded-sm ${g.span}`}>
-                  <img
-                    src={g.src}
-                    alt={`${g.label} at Kelvin Cameo Resort Hotel`}
-                    loading="lazy"
-                    width={1200}
-                    height={800}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <figcaption className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-navy-deep/85 to-transparent px-3 py-2 text-[10px] uppercase tracking-widest text-primary-foreground/85">
-                    {g.label}
-                  </figcaption>
-                </figure>
-              ))}
+            <div className="group relative mt-12 overflow-hidden">
+              <div className="gallery-track flex w-max gap-4 group-hover:[animation-play-state:paused]">
+                {[...gallery, ...gallery].map((g, i) => (
+                  <figure
+                    key={i}
+                    className="relative h-[220px] w-[280px] shrink-0 overflow-hidden rounded-sm sm:h-[260px] sm:w-[340px]"
+                  >
+                    <img
+                      src={g.src}
+                      alt={`${g.label} at Kelvin Cameo Resort Hotel`}
+                      loading="lazy"
+                      width={1200}
+                      height={800}
+                      className="h-full w-full object-cover"
+                    />
+                    <figcaption className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-navy-deep/85 to-transparent px-3 py-2 text-[10px] uppercase tracking-widest text-primary-foreground/85">
+                      {g.label}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
           </div>
         </section>
