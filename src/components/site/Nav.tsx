@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.jpg.asset.json";
+import { ASUNJI_BOOKING_URL, ASUNJI_STAFF_URL } from "@/components/site/data";
 
 const links = [
   { href: "#about", label: "About" },
@@ -57,8 +58,10 @@ export function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
-            className="rounded-sm bg-gold px-5 py-2.5 text-sm font-medium text-navy-deep transition-opacity hover:opacity-90"
+            href={ASUNJI_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-md transition-transform hover:scale-[1.03]"
           >
             Book Now
           </a>
@@ -88,14 +91,18 @@ export function Nav() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={ASUNJI_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-4 rounded-sm bg-gold px-5 py-3 text-center font-medium text-navy-deep"
+              className="mt-4 rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-3 text-center font-semibold text-navy-deep shadow-md"
             >
               Book Now
             </a>
             <a
-              href="/auth"
+              href={ASUNJI_STAFF_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-3 text-center text-xs tracking-widest uppercase text-primary-foreground/50"
             >
               Staff Login
