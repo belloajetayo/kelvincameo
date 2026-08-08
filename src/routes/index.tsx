@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 
 import { Nav } from "@/components/site/Nav";
-import { BookingForm } from "@/components/site/BookingForm";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   singleRooms,
@@ -30,7 +29,11 @@ import {
   ADDRESS,
   SOCIAL,
   GOOGLE_REVIEWS_URL,
+  ASUNJI_BOOKING_URL,
+  ASUNJI_BOOKING_EMBED_URL,
+  ASUNJI_STAFF_URL,
 } from "@/components/site/data";
+
 
 import entrance from "@/assets/entrance.jpg.asset.json";
 import exterior from "@/assets/exterior.jpg.asset.json";
