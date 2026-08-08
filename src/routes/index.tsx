@@ -214,11 +214,14 @@ function Index() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a
-                href="#contact"
-                className="rounded-sm bg-gold px-7 py-3.5 text-sm font-medium tracking-wide text-navy-deep transition-opacity hover:opacity-90"
+                href={ASUNJI_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-7 py-3.5 text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02]"
               >
-                Reserve a Room
+                Book Now
               </a>
+
               <a
                 href="#rooms"
                 className="rounded-sm border border-primary-foreground/40 px-7 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:border-gold hover:text-gold"
