@@ -226,7 +226,7 @@ function Index() {
             <div>
               <p className="eyebrow">About the hotel</p>
               <h2 className="mt-3 text-3xl font-medium sm:text-4xl">
-                The finest retreat on the Abuja–Kaduna corridor
+                The finest retreat on the Abuja–Suleja corridor
               </h2>
               <p className="mt-5 text-muted-foreground">
                 Nestled in the heart of Suleja, Kelvin Cameo Resort Hotel is where business travellers
