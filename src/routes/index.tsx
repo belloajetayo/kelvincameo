@@ -31,8 +31,6 @@ import {
   ADDRESS,
   SOCIAL,
   GOOGLE_REVIEWS_URL,
-  ASUNJI_BOOKING_URL,
-  ASUNJI_BOOKING_EMBED_URL,
   ASUNJI_STAFF_URL,
 } from "@/components/site/data";
 
