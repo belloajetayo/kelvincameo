@@ -180,3 +180,12 @@
   text-transform: uppercase;
   color: var(--gold);
 }
+
+@keyframes gallery-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility gallery-track {
+  animation: gallery-marquee 60s linear infinite;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.jpg.asset.json";
-import { ASUNJI_BOOKING_URL, ASUNJI_STAFF_URL } from "@/components/site/data";
+import { ASUNJI_STAFF_URL } from "@/components/site/data";
+import { BookNowButton, openBookingPopup } from "@/components/site/BookNowButton";
 
 const links = [
   { href: "#about", label: "About" },
@@ -57,14 +58,7 @@ export function Nav() {
               {l.label}
             </a>
           ))}
-          <a
-            href={ASUNJI_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-md transition-transform hover:scale-[1.03]"
-          >
-            Book Now
-          </a>
+          <BookNowButton className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-md transition-transform hover:scale-[1.03]" />
         </div>
 
         <button
@@ -90,15 +84,16 @@ export function Nav() {
                 {l.label}
               </a>
             ))}
-            <a
-              href={ASUNJI_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                openBookingPopup();
+              }}
               className="mt-4 rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-3 text-center font-semibold text-navy-deep shadow-md"
             >
               Book Now
-            </a>
+            </button>
             <a
               href={ASUNJI_STAFF_URL}
               target="_blank"
