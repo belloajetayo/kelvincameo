@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.jpg.asset.json";
+import { Menu, X } from "lucide-react";
 import { ASUNJI_STAFF_URL } from "@/components/site/data";
 import { BookNowButton, openBookingPopup } from "@/components/site/BookNowButton";
 
@@ -29,15 +29,9 @@ export function Nav() {
         scrolled || open ? "bg-navy-deep/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4">
-        <a href="#hero" className="flex min-w-0 items-center gap-3">
-          <img
-            src={logo.url}
-            alt="Kelvin Cameo Resort Hotel logo"
-            width={96}
-            height={96}
-            className="h-11 w-11 shrink-0 rounded-sm bg-white object-contain p-1"
-          />
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
+        {/* Brand name only — no logo */}
+        <a href="#hero" className="flex min-w-0 items-center">
           <span className="min-w-0">
             <span className="block truncate font-display text-base font-semibold tracking-wide text-primary-foreground sm:text-lg">
               Kelvin Cameo <span className="text-gold">Resort Hotel</span>
@@ -48,6 +42,7 @@ export function Nav() {
           </span>
         </a>
 
+        {/* Desktop links */}
         <div className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (
             <a
@@ -61,16 +56,18 @@ export function Nav() {
           <BookNowButton className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-md transition-transform hover:scale-[1.03]" />
         </div>
 
+        {/* Mobile menu icon button */}
         <button
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="shrink-0 rounded-sm border border-primary-foreground/25 px-3 py-2 text-sm text-primary-foreground lg:hidden"
+          className="shrink-0 rounded-sm p-2 text-primary-foreground hover:text-gold transition-colors lg:hidden"
         >
-          {open ? "Close" : "Menu"}
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
 
+      {/* Mobile menu */}
       {open && (
         <div className="border-t border-primary-foreground/10 bg-navy-deep px-5 pb-6 lg:hidden">
           <div className="flex flex-col">
@@ -86,10 +83,7 @@ export function Nav() {
             ))}
             <button
               type="button"
-              onClick={() => {
-                setOpen(false);
-                openBookingPopup();
-              }}
+              onClick={() => { setOpen(false); openBookingPopup(); }}
               className="mt-4 rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-3 text-center font-semibold text-navy-deep shadow-md"
             >
               Book Now
