@@ -392,12 +392,7 @@ function Index() {
                 </div>
               </div>
 
-              <a
-                href="#contact"
-                className="mt-8 inline-flex rounded-sm bg-gold px-7 py-3.5 text-sm font-medium text-navy-deep transition-opacity hover:opacity-90"
-              >
-                Inquire about your event
-              </a>
+              <BookNowButton className="mt-8 inline-flex rounded-sm bg-gold px-7 py-3.5 text-sm font-medium text-navy-deep transition-opacity hover:opacity-90" />
             </div>
           </div>
         </section>
@@ -580,10 +575,10 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className="fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 text-sm font-medium text-navy-deep shadow-xl transition-transform hover:scale-105 sm:bottom-5"
+        title="WhatsApp inquiries"
+        className="fixed bottom-20 right-4 z-50 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-navy-deep shadow-lg transition-transform hover:scale-110 sm:bottom-4"
       >
-        <WhatsAppIcon className="h-6 w-6" />
-        <span className="hidden sm:inline">WhatsApp Inquiries</span>
+        <WhatsAppIcon className="h-4 w-4" />
       </a>
 
       {/* Sticky booking bar */}
@@ -592,14 +587,7 @@ function Index() {
           <p className="hidden text-sm text-primary-foreground/80 sm:block">
             Best rate guaranteed when you book direct.
           </p>
-          <a
-            href={ASUNJI_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-6 py-3 text-center text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02] sm:w-auto"
-          >
-            Book Now
-          </a>
+          <BookNowButton className="block w-full rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-6 py-3 text-center text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02] sm:w-auto" />
         </div>
       </div>
 
