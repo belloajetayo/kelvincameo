@@ -21,6 +21,7 @@ import { Nav } from "@/components/site/Nav";
 import { BookNowButton } from "@/components/site/BookNowButton";
 import { BookingFrame } from "@/components/site/BookingFrame";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
+import { trackClick } from "@/lib/analytics";
 import {
   singleRooms,
   suites,
@@ -107,7 +108,7 @@ function RoomCard({ room }: { room: Room }) {
           <span className="text-sm text-muted-foreground"> / night</span>
         </p>
         <p className="mt-1 text-xs text-muted-foreground">Weekend rates may vary</p>
-        <BookNowButton className="mt-4 inline-flex items-center justify-center rounded-sm border border-navy px-4 py-2.5 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-primary-foreground" />
+        <BookNowButton source="room_card" className="mt-4 inline-flex items-center justify-center rounded-sm border border-navy px-4 py-2.5 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-primary-foreground" />
       </div>
     </article>
   );
@@ -208,7 +209,7 @@ function Index() {
               Pool, restaurant, bar and a grand banquet hall for up to 1,000 guests.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <BookNowButton className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-7 py-3.5 text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02]" />
+              <BookNowButton source="hero" className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-7 py-3.5 text-sm font-semibold tracking-wide text-navy-deep shadow-lg transition-transform hover:scale-[1.02]" />
 
               <a
                 href="#rooms"
@@ -382,7 +383,7 @@ function Index() {
                 </div>
               </div>
 
-              <BookNowButton className="mt-8 inline-flex rounded-sm bg-gold px-7 py-3.5 text-sm font-medium text-navy-deep transition-opacity hover:opacity-90" />
+              <BookNowButton source="events" className="mt-8 inline-flex rounded-sm bg-gold px-7 py-3.5 text-sm font-medium text-navy-deep transition-opacity hover:opacity-90" />
             </div>
           </div>
         </section>
@@ -488,7 +489,7 @@ function Index() {
                     </li>
                     <li className="flex gap-3">
                       <WhatsAppIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#25D366]" />
-                      <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4">
+                      <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" onClick={() => trackClick("whatsapp_click", "contact_section")} className="underline underline-offset-4">
                         WhatsApp inquiries: {PHONE}
                       </a>
                     </li>
@@ -558,6 +559,7 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with us on WhatsApp"
+        onClick={() => trackClick("whatsapp_click", "floating_button")}
         title="WhatsApp inquiries"
         className="fixed bottom-20 right-4 z-50 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-navy-deep shadow-lg transition-transform hover:scale-110 sm:bottom-6"
       >
@@ -570,7 +572,7 @@ function Index() {
           <p className="hidden text-xs text-primary-foreground/70 sm:block">
             Best rate guaranteed when you book direct.
           </p>
-          <BookNowButton className="block w-full rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-4 py-2 text-center text-xs font-semibold tracking-wide text-navy-deep shadow transition-transform hover:scale-[1.02] sm:w-auto" />
+          <BookNowButton source="sticky_bar" className="block w-full rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-4 py-2 text-center text-xs font-semibold tracking-wide text-navy-deep shadow transition-transform hover:scale-[1.02] sm:w-auto" />
         </div>
       </div>
 

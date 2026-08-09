@@ -1,4 +1,7 @@
-export function openBookingPopup() {
+import { trackClick } from "@/lib/analytics";
+
+export function openBookingPopup(source = "unknown") {
+  trackClick("book_now_click", source);
   const url = "https://kelvin-cameo-resort-hotel.asunji.com/book?property=54";
   const w = 1100;
   const h = 800;
@@ -16,15 +19,18 @@ export function openBookingPopup() {
 export function BookNowButton({
   className = "",
   label = "Book Now",
+  source = "unknown",
 }: {
   className?: string;
   label?: string;
+  source?: string;
 }) {
   return (
     <a
       href="https://kelvin-cameo-resort-hotel.asunji.com/book?property=54"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackClick("book_now_click", source)}
       style={{
         display: "inline-block",
         background: "#0071C2",
