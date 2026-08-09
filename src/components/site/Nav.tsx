@@ -53,7 +53,7 @@ export function Nav() {
               {l.label}
             </a>
           ))}
-          <BookNowButton className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-md transition-transform hover:scale-[1.03]" />
+          <BookNowButton source="nav_desktop" className="rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-md transition-transform hover:scale-[1.03]" />
         </div>
 
         {/* Mobile menu icon button */}
@@ -83,7 +83,7 @@ export function Nav() {
             ))}
             <button
               type="button"
-              onClick={() => { setOpen(false); openBookingPopup(); }}
+              onClick={() => { setOpen(false); openBookingPopup("nav_mobile"); }}
               className="mt-4 rounded-md bg-linear-to-r from-gold via-gold-soft to-gold px-5 py-3 text-center font-semibold text-navy-deep shadow-md"
             >
               Book Now
