@@ -224,6 +224,7 @@ function HeroBackdrop() {
 }
 
 function Index() {
+  const [bookingFrameOk, setBookingFrameOk] = useState(true);
   return (
     <div className="bg-background text-foreground">
       <Nav />
@@ -529,10 +530,13 @@ function Index() {
               heading="Ready to experience Kelvin Cameo?"
               copy="Book directly for the best rates. Pay securely with Paystack — cards, bank transfer and USSD all accepted."
             />
-            <div className="mt-12 grid items-start gap-8 lg:grid-cols-2">
-              <div className="overflow-hidden rounded-sm border border-border bg-card lg:sticky lg:top-28">
-                <BookingFrame />
-              </div>
+            <div className={`mt-12 grid items-start gap-8 ${bookingFrameOk ? "lg:grid-cols-2" : ""}`}>
+              {bookingFrameOk && (
+                <div className="overflow-hidden rounded-sm border border-border bg-card lg:sticky lg:top-28">
+                  <BookingFrame onUnavailable={() => setBookingFrameOk(false)} />
+                </div>
+              )}
+
 
 
 
