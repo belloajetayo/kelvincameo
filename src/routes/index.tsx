@@ -99,6 +99,11 @@ function RoomCard({ room }: { room: Room }) {
         <span className="absolute left-3 top-3 rounded-xs bg-navy-deep/80 px-2 py-1 text-[10px] uppercase tracking-widest text-primary-foreground/80">
           {room.imageLabel}
         </span>
+        {room.branch && (
+          <span className="absolute right-3 top-3 rounded-xs bg-gold px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-navy-deep">
+            {room.branch} branch
+          </span>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-5">
         <h3 className="font-display text-xl font-medium">{room.name}</h3>
