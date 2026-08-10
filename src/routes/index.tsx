@@ -38,6 +38,7 @@ import {
 
 import entrance from "@/assets/entrance.jpg.asset.json";
 import exterior from "@/assets/exterior.jpg.asset.json";
+import annex from "@/assets/annex.jpg.asset.json";
 import evening from "@/assets/evening.jpg.asset.json";
 import apartmentLounge from "@/assets/apartment-lounge.jpg.asset.json";
 import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
