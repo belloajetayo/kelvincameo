@@ -217,7 +217,7 @@ function HeroBackdrop() {
       ))}
       <div className="absolute inset-0 bg-linear-to-r from-navy-deep/90 via-navy-deep/70 to-navy-deep/40" />
       <span className="absolute bottom-5 right-5 z-10 rounded-xs bg-navy-deep/70 px-3 py-1 text-[10px] uppercase tracking-widest text-primary-foreground/80">
-        {heroSlides[active].label}
+        {heroSlides[active]?.label}
       </span>
     </>
   );
