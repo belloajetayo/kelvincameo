@@ -1,8 +1,46 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ASUNJI_BOOKING_EMBED_URL, ASUNJI_BOOKING_URL } from "./data";
 
-export function BookingFrame() {
+const CACHE_KEY = "asunji-embed-ok";
+const TIMEOUT_MS = 12000;
+
+export function BookingFrame({ onUnavailable }: { onUnavailable?: () => void }) {
+  // Cached result of a previous successful load in this session — skips the spinner flash.
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const cached =
+      typeof window !== "undefined" && window.sessionStorage.getItem(CACHE_KEY) === "1";
+    if (cached) setLoaded(true);
+
+    timer.current = setTimeout(() => {
+      setLoaded((isLoaded) => {
+        if (!isLoaded) {
+          setFailed(true);
+          onUnavailable?.();
+        }
+        return isLoaded;
+      });
+    }, TIMEOUT_MS);
+
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [onUnavailable]);
+
+  const handleLoad = () => {
+    if (timer.current) clearTimeout(timer.current);
+    try {
+      window.sessionStorage.setItem(CACHE_KEY, "1");
+    } catch {
+      /* storage unavailable — non-fatal */
+    }
+    setLoaded(true);
+  };
+
+  if (failed) return null;
 
   return (
     <div className="relative min-h-[720px]">
@@ -38,7 +76,11 @@ export function BookingFrame() {
         style={{ border: 0, maxWidth: "100%", display: "block" }}
         loading="lazy"
         title="Headless booking engine"
-        onLoad={() => setLoaded(true)}
+        onLoad={handleLoad}
+        onError={() => {
+          setFailed(true);
+          onUnavailable?.();
+        }}
         allow="payment"
       />
     </div>
