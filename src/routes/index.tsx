@@ -244,6 +244,34 @@ function Index() {
                 and grand banquet hall — every detail is designed to make you feel extraordinary.
                 Come as a guest, leave as family.
               </p>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-sm border border-border bg-card p-5">
+                  <p className="eyebrow">Branch 01</p>
+                  <h3 className="mt-2 font-display text-lg font-medium">Main Hotel</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Reception, bar, restaurant, pool and banquet hall — plus our suites and
+                    apartments.
+                  </p>
+                </div>
+                <div className="overflow-hidden rounded-sm border border-border bg-card">
+                  <img
+                    src={annex.url}
+                    alt="Kelvin Cameo Resort Hotel Annex building in Suleja"
+                    loading="lazy"
+                    width={1200}
+                    height={1600}
+                    className="h-40 w-full object-cover"
+                  />
+                  <div className="p-5">
+                    <p className="eyebrow">Branch 02</p>
+                    <h3 className="mt-2 font-display text-lg font-medium">The Annex</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Home to our Deluxe, Executive, Sunset and Prestige rooms.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="relative">
               <img
