@@ -224,6 +224,7 @@ function HeroBackdrop() {
 }
 
 function Index() {
+  const [bookingFrameOk, setBookingFrameOk] = useState(true);
   return (
     <div className="bg-background text-foreground">
       <Nav />
