@@ -1,5 +1,9 @@
 import singleRoom from "@/assets/single-room.jpg.asset.json";
 import roomPurple from "@/assets/room-purple.jpg.asset.json";
+import roomDeluxe from "@/assets/room-deluxe.jpg.asset.json";
+import roomExecutive from "@/assets/room-executive.jpg.asset.json";
+import roomSunset from "@/assets/room-sunset.jpg.asset.json";
+import roomPrestige from "@/assets/room-prestige.jpg.asset.json";
 import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
 import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
 import apartmentLounge from "@/assets/apartment-lounge.jpg.asset.json";
@@ -14,10 +18,10 @@ export type Room = {
 };
 
 export const singleRooms: Room[] = [
-  { name: "Deluxe", price: "₦25,000", image: singleRoom.url, imageLabel: "rooms/single-rooms", blurb: "Cosy en-suite with king bed, AC and smart TV." },
-  { name: "Executive", price: "₦35,000", image: roomPurple.url, imageLabel: "rooms/single-rooms", blurb: "Extra space, work desk and premium bedding." },
-  { name: "Sunset", price: "₦40,000", image: singleRoom.url, imageLabel: "rooms/single-rooms", blurb: "Warm evening light and a private lounge chair." },
-  { name: "Prestige", price: "₦45,000", image: roomPurple.url, imageLabel: "rooms/single-rooms", blurb: "Refined finishes with a generous seating corner." },
+  { name: "Deluxe", price: "₦25,000", image: roomDeluxe.url, imageLabel: "rooms/single-rooms", blurb: "Cosy en-suite with king bed, AC and smart TV." },
+  { name: "Executive", price: "₦35,000", image: roomExecutive.url, imageLabel: "rooms/single-rooms", blurb: "Extra space, work desk and premium bedding." },
+  { name: "Sunset", price: "₦40,000", image: roomSunset.url, imageLabel: "rooms/single-rooms", blurb: "Warm evening light and a private lounge chair." },
+  { name: "Prestige", price: "₦45,000", image: roomPrestige.url, imageLabel: "rooms/single-rooms", blurb: "Refined finishes with a generous seating corner." },
   { name: "Love Night", price: "₦50,000", image: singleRoom.url, imageLabel: "rooms/single-rooms", blurb: "Romantic styling for couples and getaways." },
   { name: "Golden Nest", price: "₦60,000", image: roomPurple.url, imageLabel: "rooms/single-rooms", blurb: "Our finest single room, styled in gold." },
 ];
