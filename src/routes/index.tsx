@@ -187,6 +187,41 @@ const reviews = [
   },
 ];
 
+const heroSlides = [
+  { src: evening.url, alt: "Kelvin Cameo Resort Hotel exterior at dusk", label: "Main branch" },
+  { src: annex.url, alt: "Kelvin Cameo Resort Hotel Annex in Suleja", label: "Annex branch" },
+];
+
+function HeroBackdrop() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setActive((i) => (i + 1) % heroSlides.length), 6000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <>
+      {heroSlides.map((slide, i) => (
+        <img
+          key={slide.src}
+          src={slide.src}
+          alt={slide.alt}
+          width={1200}
+          height={1600}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+            i === active ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+      <div className="absolute inset-0 bg-linear-to-r from-navy-deep/90 via-navy-deep/70 to-navy-deep/40" />
+      <span className="absolute bottom-5 right-5 z-10 rounded-xs bg-navy-deep/70 px-3 py-1 text-[10px] uppercase tracking-widest text-primary-foreground/80">
+        {heroSlides[active].label}
+      </span>
+    </>
+  );
+}
+
 function Index() {
   return (
     <div className="bg-background text-foreground">
@@ -195,14 +230,8 @@ function Index() {
       <main>
         {/* HERO */}
         <section id="hero" className="relative flex min-h-[92vh] items-center">
-          <img
-            src={evening.url}
-            alt="Kelvin Cameo Resort Hotel exterior at dusk"
-            width={1200}
-            height={1600}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-navy-deep/90 via-navy-deep/70 to-navy-deep/40" />
+          <HeroBackdrop />
+
           <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20">
             <p className="eyebrow tracking-[0.25em]">Suleja · Niger State · Nigeria</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-medium leading-tight text-primary-foreground sm:text-6xl lg:text-7xl">
