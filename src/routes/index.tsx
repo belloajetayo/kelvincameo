@@ -86,13 +86,13 @@ function SectionHeading({ eyebrow, heading, copy }: { eyebrow: string; heading: 
   );
 }
 
-function RoomCard({ room }: { room: Room }) {
+function RoomCard({ room, src }: { room: Room; src: string }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-sm bg-card shadow-sm transition-shadow hover:shadow-xl">
       <div className="relative aspect-4/3 overflow-hidden">
-        {room.image ? (
+        {src ? (
           <img
-            src={room.image}
+            src={src}
             alt={`${room.name} room at Kelvin Cameo Resort Hotel`}
             loading="lazy"
             width={1200}
