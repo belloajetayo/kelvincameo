@@ -168,11 +168,11 @@ const reviews = [
 ];
 
 const heroSlides = [
-  { src: evening.url, alt: "Kelvin Cameo Resort Hotel exterior at dusk", label: "Main branch" },
-  { src: annex.url, alt: "Kelvin Cameo Resort Hotel Annex in Suleja", label: "Annex branch" },
+  { key: "hero:main", src: FEATURE_IMAGES["hero:main"], alt: "Kelvin Cameo Resort Hotel exterior at dusk", label: "Main branch" },
+  { key: "hero:annex", src: FEATURE_IMAGES["hero:annex"], alt: "Kelvin Cameo Resort Hotel Annex in Suleja", label: "Annex branch" },
 ];
 
-function HeroBackdrop() {
+function HeroBackdrop({ img }: { img: (key: string, fallback: string) => string }) {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -184,8 +184,8 @@ function HeroBackdrop() {
     <>
       {heroSlides.map((slide, i) => (
         <img
-          key={slide.src}
-          src={slide.src}
+          key={slide.key}
+          src={img(slide.key, slide.src)}
           alt={slide.alt}
           width={1200}
           height={1600}
