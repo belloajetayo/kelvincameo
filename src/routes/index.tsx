@@ -106,7 +106,7 @@ function RoomCard({ room, src }: { room: Room; src: string }) {
             </span>
           </div>
         )}
-        {room.image && (
+        {src && (
           <span className="absolute left-3 top-3 rounded-xs bg-navy-deep/80 px-2 py-1 text-[10px] uppercase tracking-widest text-primary-foreground/80">
             {room.imageLabel}
           </span>
