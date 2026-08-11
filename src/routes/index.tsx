@@ -268,7 +268,7 @@ function Index() {
                 </div>
                 <div className="overflow-hidden rounded-sm border border-border bg-card">
                   <img
-                    src={annex.url}
+                    src={img("about:annex", FEATURE_IMAGES["about:annex"])}
                     alt="Kelvin Cameo Resort Hotel Annex building in Suleja"
                     loading="lazy"
                     width={1200}
@@ -287,7 +287,7 @@ function Index() {
             </div>
             <div className="relative">
               <img
-                src={exterior.url}
+                src={img("about:main", FEATURE_IMAGES["about:main"])}
                 alt="Front facade of Kelvin Cameo Resort Hotel"
                 loading="lazy"
                 width={1200}
@@ -388,7 +388,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2">
             <div className="relative">
               <img
-                src={banquet.url}
+                src={img("events:banquet", FEATURE_IMAGES["events:banquet"])}
                 alt="Banquet hall set for an event at Kelvin Cameo Resort Hotel"
                 loading="lazy"
                 width={1200}
