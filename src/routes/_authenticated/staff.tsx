@@ -268,6 +268,8 @@ function StaffDashboard() {
                 </article>
               ))}
             </div>
+
+            <ImageManager />
           </>
         )}
       </main>
