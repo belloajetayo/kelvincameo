@@ -4,10 +4,8 @@ import roomDeluxe from "@/assets/room-deluxe.jpg.asset.json";
 import roomExecutive from "@/assets/room-executive.jpg.asset.json";
 import roomSunset from "@/assets/room-sunset.jpg.asset.json";
 import roomPrestige from "@/assets/room-prestige.jpg.asset.json";
-import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
 import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
 import apartmentLounge from "@/assets/apartment-lounge.jpg.asset.json";
-import dining from "@/assets/dining.jpg.asset.json";
 
 export type Room = {
   name: string;
