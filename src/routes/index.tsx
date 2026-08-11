@@ -142,23 +142,6 @@ const amenities = [
   { icon: CarFront, label: "Parking", note: "Secure on-site parking" },
 ];
 
-const gallery = [
-  { src: entrance.url, label: "entrance", span: "sm:row-span-2" },
-  { src: barCounter.url, label: "bar", span: "" },
-  { src: banquet.url, label: "banquet-hall", span: "" },
-  { src: barLounge.url, label: "bar & lounge", span: "" },
-  { src: loungePoolTable.url, label: "games lounge", span: "sm:row-span-2" },
-  { src: loungeView.url, label: "lounge", span: "" },
-  { src: pool, label: "swimming-pool", span: "" },
-  { src: restaurant, label: "restaurant", span: "" },
-  { src: apartmentLounge.url, label: "rooms/apartment", span: "" },
-  { src: suiteLounge.url, label: "rooms/suites", span: "" },
-  { src: roomPurple.url, label: "rooms/single-rooms", span: "" },
-  { src: apartmentHall.url, label: "reception", span: "" },
-  { src: dining2.url, label: "rooms/apartment", span: "" },
-  { src: exterior.url, label: "entrance", span: "" },
-  { src: evening.url, label: "entrance", span: "" },
-];
 
 const partners = [
   "Booking.com",
