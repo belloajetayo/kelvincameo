@@ -396,7 +396,7 @@ function Index() {
                     className="relative h-[220px] w-[280px] shrink-0 overflow-hidden rounded-sm sm:h-[260px] sm:w-[340px]"
                   >
                     <img
-                      src={g.src}
+                      src={img(g.key, g.src)}
                       alt={`${g.label} at Kelvin Cameo Resort Hotel`}
                       loading="lazy"
                       width={1200}
