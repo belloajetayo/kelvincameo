@@ -204,6 +204,7 @@ function HeroBackdrop({ img }: { img: (key: string, fallback: string) => string 
 
 function Index() {
   const [bookingFrameOk, setBookingFrameOk] = useState(true);
+  const img = useSiteImages();
   return (
     <div className="bg-background text-foreground">
       <Nav />
@@ -211,7 +212,7 @@ function Index() {
       <main>
         {/* HERO */}
         <section id="hero" className="relative flex min-h-[92vh] items-center">
-          <HeroBackdrop />
+          <HeroBackdrop img={img} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20">
             <p className="eyebrow tracking-[0.25em]">Suleja · Niger State · Nigeria</p>
