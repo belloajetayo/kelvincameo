@@ -37,24 +37,10 @@ import {
 } from "@/components/site/data";
 
 
+import { gallery, FEATURE_IMAGES, useSiteImages } from "@/components/site/images";
+
 import entrance from "@/assets/entrance.jpg.asset.json";
-import exterior from "@/assets/exterior.jpg.asset.json";
-import annex from "@/assets/annex.jpg.asset.json";
-import evening from "@/assets/evening.jpg.asset.json";
-import apartmentLounge from "@/assets/apartment-lounge.jpg.asset.json";
-import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
-import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
-import roomPurple from "@/assets/room-purple.jpg.asset.json";
-import dining2 from "@/assets/dining-2.jpg.asset.json";
 
-import barCounter from "@/assets/bar-counter.jpg.asset.json";
-import barLounge from "@/assets/bar-lounge.jpg.asset.json";
-import loungePoolTable from "@/assets/lounge-pool-table.jpg.asset.json";
-import loungeView from "@/assets/lounge-view.jpg.asset.json";
-
-import banquet from "@/assets/banquet-hall.jpg.asset.json";
-import pool from "@/assets/swimming-pool.jpg";
-import restaurant from "@/assets/restaurant.jpg";
 
 const title = "Kelvin Cameo Resort Hotel — Luxury Stays in Suleja, Niger State";
 const description =
