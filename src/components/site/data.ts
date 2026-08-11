@@ -28,13 +28,13 @@ export const singleRooms: Room[] = [
 ];
 
 export const suites: Room[] = [
-  { name: "Royal Treat", price: "₦60,000", image: suiteLounge.url, imageLabel: "rooms/suites", blurb: "Separate lounge, king bed and elevated comfort." },
+  { name: "Royal Treat", price: "₦60,000", image: "", imageLabel: "rooms/suites", blurb: "Separate lounge, king bed and elevated comfort." },
   { name: "Blissful Breeze", price: "₦75,000", image: apartmentHall.url, imageLabel: "rooms/suites", blurb: "Airy suite with expansive living space." },
 ];
 
 export const apartments: Room[] = [
-  { name: "Luxury Retreat", price: "₦160,000", image: apartmentLounge.url, imageLabel: "rooms/apartment", blurb: "Full apartment with kitchen, lounge and dining." },
-  { name: "Royal Retreat", price: "₦180,000", image: dining.url, imageLabel: "rooms/apartment", blurb: "Our largest residence for extended stays." },
+  { name: "Luxury Retreat", price: "₦160,000", image: "", imageLabel: "rooms/apartment", blurb: "Full apartment with kitchen, lounge and dining." },
+  { name: "Royal Retreat", price: "₦180,000", image: apartmentLounge.url, imageLabel: "rooms/apartment", blurb: "Our largest residence for extended stays." },
 ];
 
 export const allRoomNames = [...singleRooms, ...suites, ...apartments].map((r) => r.name);
