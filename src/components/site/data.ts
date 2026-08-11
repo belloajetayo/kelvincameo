@@ -17,8 +17,8 @@ export type Room = {
 };
 
 export const singleRooms: Room[] = [
-  { name: "Deluxe", price: "₦25,000", image: roomDeluxe.url, imageLabel: "rooms/single-rooms", branch: "Annex", blurb: "Cosy en-suite with king bed, AC and smart TV." },
-  { name: "Executive", price: "₦35,000", image: roomExecutive.url, imageLabel: "rooms/single-rooms", branch: "Annex", blurb: "Extra space, work desk and premium bedding." },
+  { name: "Deluxe", price: "₦25,000", image: roomExecutive.url, imageLabel: "rooms/single-rooms", branch: "Annex", blurb: "Cosy en-suite with king bed, AC and smart TV." },
+  { name: "Executive", price: "₦35,000", image: roomDeluxe.url, imageLabel: "rooms/single-rooms", branch: "Annex", blurb: "Extra space, work desk and premium bedding." },
   { name: "Sunset", price: "₦40,000", image: roomSunset.url, imageLabel: "rooms/single-rooms", branch: "Annex", blurb: "Warm evening light and a private lounge chair." },
   { name: "Prestige", price: "₦45,000", image: roomPrestige.url, imageLabel: "rooms/single-rooms", branch: "Annex", blurb: "Refined finishes with a generous seating corner." },
   { name: "Love Night", price: "₦50,000", image: singleRoom.url, imageLabel: "rooms/single-rooms", blurb: "Romantic styling for couples and getaways." },
