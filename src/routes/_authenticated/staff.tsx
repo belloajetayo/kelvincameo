@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { ImageManager } from "@/components/site/ImageManager";
 import logo from "@/assets/logo.jpg.asset.json";
 
 export const Route = createFileRoute("/_authenticated/staff")({
@@ -268,6 +269,8 @@ function StaffDashboard() {
                 </article>
               ))}
             </div>
+
+            <ImageManager />
           </>
         )}
       </main>

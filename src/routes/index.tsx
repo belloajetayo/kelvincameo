@@ -37,24 +37,10 @@ import {
 } from "@/components/site/data";
 
 
+import { gallery, FEATURE_IMAGES, useSiteImages } from "@/components/site/images";
+
 import entrance from "@/assets/entrance.jpg.asset.json";
-import exterior from "@/assets/exterior.jpg.asset.json";
-import annex from "@/assets/annex.jpg.asset.json";
-import evening from "@/assets/evening.jpg.asset.json";
-import apartmentLounge from "@/assets/apartment-lounge.jpg.asset.json";
-import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
-import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
-import roomPurple from "@/assets/room-purple.jpg.asset.json";
-import dining2 from "@/assets/dining-2.jpg.asset.json";
 
-import barCounter from "@/assets/bar-counter.jpg.asset.json";
-import barLounge from "@/assets/bar-lounge.jpg.asset.json";
-import loungePoolTable from "@/assets/lounge-pool-table.jpg.asset.json";
-import loungeView from "@/assets/lounge-view.jpg.asset.json";
-
-import banquet from "@/assets/banquet-hall.jpg.asset.json";
-import pool from "@/assets/swimming-pool.jpg";
-import restaurant from "@/assets/restaurant.jpg";
 
 const title = "Kelvin Cameo Resort Hotel — Luxury Stays in Suleja, Niger State";
 const description =
@@ -86,13 +72,13 @@ function SectionHeading({ eyebrow, heading, copy }: { eyebrow: string; heading: 
   );
 }
 
-function RoomCard({ room }: { room: Room }) {
+function RoomCard({ room, src }: { room: Room; src: string }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-sm bg-card shadow-sm transition-shadow hover:shadow-xl">
       <div className="relative aspect-4/3 overflow-hidden">
-        {room.image ? (
+        {src ? (
           <img
-            src={room.image}
+            src={src}
             alt={`${room.name} room at Kelvin Cameo Resort Hotel`}
             loading="lazy"
             width={1200}
@@ -106,7 +92,7 @@ function RoomCard({ room }: { room: Room }) {
             </span>
           </div>
         )}
-        {room.image && (
+        {src && (
           <span className="absolute left-3 top-3 rounded-xs bg-navy-deep/80 px-2 py-1 text-[10px] uppercase tracking-widest text-primary-foreground/80">
             {room.imageLabel}
           </span>
@@ -142,23 +128,6 @@ const amenities = [
   { icon: CarFront, label: "Parking", note: "Secure on-site parking" },
 ];
 
-const gallery = [
-  { src: entrance.url, label: "entrance", span: "sm:row-span-2" },
-  { src: barCounter.url, label: "bar", span: "" },
-  { src: banquet.url, label: "banquet-hall", span: "" },
-  { src: barLounge.url, label: "bar & lounge", span: "" },
-  { src: loungePoolTable.url, label: "games lounge", span: "sm:row-span-2" },
-  { src: loungeView.url, label: "lounge", span: "" },
-  { src: pool, label: "swimming-pool", span: "" },
-  { src: restaurant, label: "restaurant", span: "" },
-  { src: apartmentLounge.url, label: "rooms/apartment", span: "" },
-  { src: suiteLounge.url, label: "rooms/suites", span: "" },
-  { src: roomPurple.url, label: "rooms/single-rooms", span: "" },
-  { src: apartmentHall.url, label: "reception", span: "" },
-  { src: dining2.url, label: "rooms/apartment", span: "" },
-  { src: exterior.url, label: "entrance", span: "" },
-  { src: evening.url, label: "entrance", span: "" },
-];
 
 const partners = [
   "Booking.com",
@@ -199,11 +168,11 @@ const reviews = [
 ];
 
 const heroSlides = [
-  { src: evening.url, alt: "Kelvin Cameo Resort Hotel exterior at dusk", label: "Main branch" },
-  { src: annex.url, alt: "Kelvin Cameo Resort Hotel Annex in Suleja", label: "Annex branch" },
+  { key: "hero:main", src: FEATURE_IMAGES["hero:main"], alt: "Kelvin Cameo Resort Hotel exterior at dusk", label: "Main branch" },
+  { key: "hero:annex", src: FEATURE_IMAGES["hero:annex"], alt: "Kelvin Cameo Resort Hotel Annex in Suleja", label: "Annex branch" },
 ];
 
-function HeroBackdrop() {
+function HeroBackdrop({ img }: { img: (key: string, fallback: string) => string }) {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -215,8 +184,8 @@ function HeroBackdrop() {
     <>
       {heroSlides.map((slide, i) => (
         <img
-          key={slide.src}
-          src={slide.src}
+          key={slide.key}
+          src={img(slide.key, slide.src)}
           alt={slide.alt}
           width={1200}
           height={1600}
@@ -235,6 +204,7 @@ function HeroBackdrop() {
 
 function Index() {
   const [bookingFrameOk, setBookingFrameOk] = useState(true);
+  const img = useSiteImages();
   return (
     <div className="bg-background text-foreground">
       <Nav />
@@ -242,7 +212,7 @@ function Index() {
       <main>
         {/* HERO */}
         <section id="hero" className="relative flex min-h-[92vh] items-center">
-          <HeroBackdrop />
+          <HeroBackdrop img={img} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 pb-20">
             <p className="eyebrow tracking-[0.25em]">Suleja · Niger State · Nigeria</p>
@@ -298,7 +268,7 @@ function Index() {
                 </div>
                 <div className="overflow-hidden rounded-sm border border-border bg-card">
                   <img
-                    src={annex.url}
+                    src={img("about:annex", FEATURE_IMAGES["about:annex"])}
                     alt="Kelvin Cameo Resort Hotel Annex building in Suleja"
                     loading="lazy"
                     width={1200}
@@ -317,7 +287,7 @@ function Index() {
             </div>
             <div className="relative">
               <img
-                src={exterior.url}
+                src={img("about:main", FEATURE_IMAGES["about:main"])}
                 alt="Front facade of Kelvin Cameo Resort Hotel"
                 loading="lazy"
                 width={1200}
@@ -343,21 +313,21 @@ function Index() {
             <h3 className="mt-14 font-display text-xl tracking-wide text-navy">Single Rooms</h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {singleRooms.map((r) => (
-                <RoomCard key={r.name} room={r} />
+                <RoomCard key={r.name} room={r} src={img(`room:${r.name}`, r.image)} />
               ))}
             </div>
 
             <h3 className="mt-16 font-display text-xl tracking-wide text-navy">Suites</h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {suites.map((r) => (
-                <RoomCard key={r.name} room={r} />
+                <RoomCard key={r.name} room={r} src={img(`room:${r.name}`, r.image)} />
               ))}
             </div>
 
             <h3 className="mt-16 font-display text-xl tracking-wide text-navy">Apartments</h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {apartments.map((r) => (
-                <RoomCard key={r.name} room={r} />
+                <RoomCard key={r.name} room={r} src={img(`room:${r.name}`, r.image)} />
               ))}
             </div>
           </div>
@@ -396,7 +366,7 @@ function Index() {
                     className="relative h-[220px] w-[280px] shrink-0 overflow-hidden rounded-sm sm:h-[260px] sm:w-[340px]"
                   >
                     <img
-                      src={g.src}
+                      src={img(g.key, g.src)}
                       alt={`${g.label} at Kelvin Cameo Resort Hotel`}
                       loading="lazy"
                       width={1200}
@@ -418,7 +388,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2">
             <div className="relative">
               <img
-                src={banquet.url}
+                src={img("events:banquet", FEATURE_IMAGES["events:banquet"])}
                 alt="Banquet hall set for an event at Kelvin Cameo Resort Hotel"
                 loading="lazy"
                 width={1200}
