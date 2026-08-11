@@ -90,17 +90,27 @@ function RoomCard({ room }: { room: Room }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-sm bg-card shadow-sm transition-shadow hover:shadow-xl">
       <div className="relative aspect-4/3 overflow-hidden">
-        <img
-          src={room.image}
-          alt={`${room.name} room at Kelvin Cameo Resort Hotel`}
-          loading="lazy"
-          width={1200}
-          height={800}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <span className="absolute left-3 top-3 rounded-xs bg-navy-deep/80 px-2 py-1 text-[10px] uppercase tracking-widest text-primary-foreground/80">
-          {room.imageLabel}
-        </span>
+        {room.image ? (
+          <img
+            src={room.image}
+            alt={`${room.name} room at Kelvin Cameo Resort Hotel`}
+            loading="lazy"
+            width={1200}
+            height={800}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-navy-deep/5">
+            <span className="font-display text-sm uppercase tracking-widest text-muted-foreground">
+              Photos coming soon
+            </span>
+          </div>
+        )}
+        {room.image && (
+          <span className="absolute left-3 top-3 rounded-xs bg-navy-deep/80 px-2 py-1 text-[10px] uppercase tracking-widest text-primary-foreground/80">
+            {room.imageLabel}
+          </span>
+        )}
         {room.branch && (
           <span className="absolute right-3 top-3 rounded-xs bg-gold px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-navy-deep">
             {room.branch} branch
