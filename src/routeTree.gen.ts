@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as PaymentRouteImport } from './routes/payment'
 import { Route as AuthenticatedStaffRouteImport } from './routes/_authenticated/staff'
+import { Route as ApiPublicSiteImageSplatRouteImport } from './routes/api/public/site-image/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -39,18 +40,25 @@ const AuthenticatedStaffRoute = AuthenticatedStaffRouteImport.update({
   path: '/staff',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const ApiPublicSiteImageSplatRoute = ApiPublicSiteImageSplatRouteImport.update({
+  id: '/api/public/site-image/$',
+  path: '/api/public/site-image/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/payment': typeof PaymentRoute
   '/staff': typeof AuthenticatedStaffRoute
+  '/api/public/site-image/$': typeof ApiPublicSiteImageSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/payment': typeof PaymentRoute
   '/staff': typeof AuthenticatedStaffRoute
+  '/api/public/site-image/$': typeof ApiPublicSiteImageSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -59,12 +67,13 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/payment': typeof PaymentRoute
   '/_authenticated/staff': typeof AuthenticatedStaffRoute
+  '/api/public/site-image/$': typeof ApiPublicSiteImageSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/payment' | '/staff'
+  fullPaths: '/' | '/auth' | '/payment' | '/staff' | '/api/public/site-image/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/payment' | '/staff'
+  to: '/' | '/auth' | '/payment' | '/staff' | '/api/public/site-image/$'
   id:
     | '__root__'
     | '/'
@@ -72,6 +81,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/payment'
     | '/_authenticated/staff'
+    | '/api/public/site-image/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -79,6 +89,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   PaymentRoute: typeof PaymentRoute
+  ApiPublicSiteImageSplatRoute: typeof ApiPublicSiteImageSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -118,6 +129,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedStaffRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/api/public/site-image/$': {
+      id: '/api/public/site-image/$'
+      path: '/api/public/site-image/$'
+      fullPath: '/api/public/site-image/$'
+      preLoaderRoute: typeof ApiPublicSiteImageSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -137,17 +155,8 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   PaymentRoute: PaymentRoute,
+  ApiPublicSiteImageSplatRoute: ApiPublicSiteImageSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
