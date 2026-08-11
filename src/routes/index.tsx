@@ -343,21 +343,21 @@ function Index() {
             <h3 className="mt-14 font-display text-xl tracking-wide text-navy">Single Rooms</h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {singleRooms.map((r) => (
-                <RoomCard key={r.name} room={r} />
+                <RoomCard key={r.name} room={r} src={img(`room:${r.name}`, r.image)} />
               ))}
             </div>
 
             <h3 className="mt-16 font-display text-xl tracking-wide text-navy">Suites</h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {suites.map((r) => (
-                <RoomCard key={r.name} room={r} />
+                <RoomCard key={r.name} room={r} src={img(`room:${r.name}`, r.image)} />
               ))}
             </div>
 
             <h3 className="mt-16 font-display text-xl tracking-wide text-navy">Apartments</h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {apartments.map((r) => (
-                <RoomCard key={r.name} room={r} />
+                <RoomCard key={r.name} room={r} src={img(`room:${r.name}`, r.image)} />
               ))}
             </div>
           </div>
