@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import logo from "@/assets/logo.jpg.asset.json";
+const logo = "/images/logo.jpg";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
@@ -76,7 +76,7 @@ function AuthPage() {
       <div className="w-full max-w-md rounded-sm border border-gold/25 bg-card p-8 shadow-xl">
         <div className="flex items-center gap-3">
           <img
-            src={logo.url}
+            src={logo}
             alt="Kelvin Cameo Resort Hotel logo"
             width={96}
             height={96}
