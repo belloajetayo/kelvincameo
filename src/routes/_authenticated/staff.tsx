@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { ImageManager } from "@/components/site/ImageManager";
-import logo from "@/assets/logo.jpg.asset.json";
+const logo = "/images/logo.jpg";
 
 export const Route = createFileRoute("/_authenticated/staff")({
   component: StaffDashboard,
@@ -104,7 +104,7 @@ function StaffDashboard() {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-3">
             <img
-              src={logo.url}
+              src={logo}
               alt="Kelvin Cameo Resort Hotel logo"
               width={96}
               height={96}

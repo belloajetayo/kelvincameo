@@ -2,51 +2,51 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { singleRooms, suites, apartments } from "@/components/site/data";
 
-import entrance from "@/assets/entrance.jpg.asset.json";
-import exterior from "@/assets/exterior.jpg.asset.json";
-import annex from "@/assets/annex.jpg.asset.json";
-import evening from "@/assets/evening.jpg.asset.json";
-import apartmentLounge from "@/assets/apartment-lounge.jpg.asset.json";
-import apartmentHall from "@/assets/apartment-hall.jpg.asset.json";
-import suiteLounge from "@/assets/suite-lounge.jpg.asset.json";
-import roomPurple from "@/assets/room-purple.jpg.asset.json";
-import dining2 from "@/assets/dining-2.jpg.asset.json";
-import barCounter from "@/assets/bar-counter.jpg.asset.json";
-import barLounge from "@/assets/bar-lounge.jpg.asset.json";
-import loungePoolTable from "@/assets/lounge-pool-table.jpg.asset.json";
-import loungeView from "@/assets/lounge-view.jpg.asset.json";
-import banquet from "@/assets/banquet-hall.jpg.asset.json";
-import pool from "@/assets/swimming-pool.jpg";
-import restaurant from "@/assets/restaurant.jpg";
+const entrance = "/images/entrance.jpg";
+const exterior = "/images/exterior.jpg";
+const annex = "/images/annex.jpg";
+const evening = "/images/evening.jpg";
+const apartmentLounge = "/images/apartment-lounge.jpg";
+const apartmentHall = "/images/apartment-hall.jpg";
+const suiteLounge = "/images/suite-lounge.jpg";
+const roomPurple = "/images/room-purple.jpg";
+const dining2 = "/images/dining-2.jpg";
+const barCounter = "/images/bar-counter.jpg";
+const barLounge = "/images/bar-lounge.jpg";
+const loungePoolTable = "/images/lounge-pool-table.jpg";
+const loungeView = "/images/lounge-view.jpg";
+const banquet = "/images/banquet-hall.jpg";
+const pool = "/images/swimming-pool.jpg";
+const restaurant = "/images/restaurant.jpg";
 
 export type GalleryItem = { key: string; src: string; label: string; span: string };
 
 /** Gallery / amenity photos. `key` is the slot name staff can override. */
 export const gallery: GalleryItem[] = [
-  { key: "gallery:entrance", src: entrance.url, label: "entrance", span: "sm:row-span-2" },
-  { key: "gallery:bar", src: barCounter.url, label: "bar", span: "" },
-  { key: "gallery:banquet", src: banquet.url, label: "banquet-hall", span: "" },
-  { key: "gallery:bar-lounge", src: barLounge.url, label: "bar & lounge", span: "" },
-  { key: "gallery:games-lounge", src: loungePoolTable.url, label: "games lounge", span: "sm:row-span-2" },
-  { key: "gallery:lounge", src: loungeView.url, label: "lounge", span: "" },
+  { key: "gallery:entrance", src: entrance, label: "entrance", span: "sm:row-span-2" },
+  { key: "gallery:bar", src: barCounter, label: "bar", span: "" },
+  { key: "gallery:banquet", src: banquet, label: "banquet-hall", span: "" },
+  { key: "gallery:bar-lounge", src: barLounge, label: "bar & lounge", span: "" },
+  { key: "gallery:games-lounge", src: loungePoolTable, label: "games lounge", span: "sm:row-span-2" },
+  { key: "gallery:lounge", src: loungeView, label: "lounge", span: "" },
   { key: "gallery:pool", src: pool, label: "swimming-pool", span: "" },
   { key: "gallery:restaurant", src: restaurant, label: "restaurant", span: "" },
-  { key: "gallery:apartment", src: apartmentLounge.url, label: "rooms/apartment", span: "" },
-  { key: "gallery:suite", src: suiteLounge.url, label: "rooms/suites", span: "" },
-  { key: "gallery:single-room", src: roomPurple.url, label: "rooms/single-rooms", span: "" },
-  { key: "gallery:reception", src: apartmentHall.url, label: "reception", span: "" },
-  { key: "gallery:dining", src: dining2.url, label: "rooms/apartment", span: "" },
-  { key: "gallery:exterior", src: exterior.url, label: "entrance", span: "" },
-  { key: "gallery:evening", src: evening.url, label: "entrance", span: "" },
+  { key: "gallery:apartment", src: apartmentLounge, label: "rooms/apartment", span: "" },
+  { key: "gallery:suite", src: suiteLounge, label: "rooms/suites", span: "" },
+  { key: "gallery:single-room", src: roomPurple, label: "rooms/single-rooms", span: "" },
+  { key: "gallery:reception", src: apartmentHall, label: "reception", span: "" },
+  { key: "gallery:dining", src: dining2, label: "rooms/apartment", span: "" },
+  { key: "gallery:exterior", src: exterior, label: "entrance", span: "" },
+  { key: "gallery:evening", src: evening, label: "entrance", span: "" },
 ];
 
 /** Big feature photos used outside the gallery grid. */
 export const FEATURE_IMAGES = {
-  "hero:main": evening.url,
-  "hero:annex": annex.url,
-  "about:annex": annex.url,
-  "about:main": exterior.url,
-  "events:banquet": banquet.url,
+  "hero:main": evening,
+  "hero:annex": annex,
+  "about:annex": annex,
+  "about:main": exterior,
+  "events:banquet": banquet,
 } as const;
 
 export type ImageSlot = { key: string; label: string; group: string; fallback: string };

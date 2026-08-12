@@ -39,7 +39,7 @@ import {
 
 import { gallery, FEATURE_IMAGES, useSiteImages } from "@/components/site/images";
 
-import entrance from "@/assets/entrance.jpg.asset.json";
+const entrance = "/images/entrance.jpg";
 
 
 const title = "Kelvin Cameo Resort Hotel — Luxury Stays in Suleja, Niger State";
@@ -54,9 +54,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: entrance.url },
+      { property: "og:image", content: "https://kelvincameo.lovable.app/images/entrance.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: entrance.url },
+      { name: "twitter:image", content: "https://kelvincameo.lovable.app/images/entrance.jpg" },
     ],
   }),
   component: Index,
