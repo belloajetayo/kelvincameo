@@ -27,7 +27,7 @@ export const singleRooms: Room[] = [
 ];
 
 export const suites: Room[] = [
-  { name: "Royal Treat", price: "₦60,000", image: "", imageLabel: "rooms/suites", blurb: "Separate lounge, king bed and elevated comfort." },
+  { name: "Royal Treat", price: "₦60,000", image: "", imageLabel: "rooms/suites", blurb: "Separate lounge, king bed and elevated comfort.", paystackUrl: "https://paystack.com/buy/golden-nest-ugswqe" },
   { name: "Blissful Breeze", price: "₦75,000", image: apartmentHall, imageLabel: "rooms/suites", blurb: "Airy suite with expansive living space.", paystackUrl: "https://paystack.com/buy/blissful-breeze-aqlhld" },
 ];
 
