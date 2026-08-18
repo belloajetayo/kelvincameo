@@ -27,6 +27,7 @@ import {
   singleRooms,
   suites,
   apartments,
+  banquetPackages,
   type Room,
   WHATSAPP_URL,
   PHONE,
@@ -111,7 +112,27 @@ function RoomCard({ room, src }: { room: Room; src: string }) {
           <span className="text-sm text-muted-foreground"> / night</span>
         </p>
         <p className="mt-1 text-xs text-muted-foreground">Weekend rates may vary</p>
-        <BookNowButton source="room_card" className="mt-4 inline-flex items-center justify-center rounded-sm border border-navy px-4 py-2.5 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-primary-foreground" />
+        <div className="mt-4 flex gap-2">
+          {room.paystackUrl ? (
+            <a
+              href={room.paystackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center rounded-sm bg-[#0071C2] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              Book Now
+            </a>
+          ) : (
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center rounded-sm border border-navy px-4 py-2.5 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-primary-foreground"
+            >
+              Enquire
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
@@ -416,6 +437,24 @@ function Index() {
                   <p className="mt-2 text-sm text-muted-foreground">
                     Hall, chairs, tables and full decor included.
                   </p>
+                  <div className="mt-4 flex gap-3">
+                    <a
+                      href="https://paystack.com/buy/banquet-hall--celebrations-vuwyfa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-sm bg-[#0071C2] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    >
+                      Book Hall
+                    </a>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-sm border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:border-gold transition-colors"
+                    >
+                      Enquire
+                    </a>
+                  </div>
                 </div>
                 <div className="rounded-sm border border-border bg-card p-6">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -428,7 +467,14 @@ function Index() {
                 </div>
               </div>
 
-              <BookNowButton source="events" className="mt-8 inline-flex rounded-sm bg-gold px-7 py-3.5 text-sm font-medium text-navy-deep transition-opacity hover:opacity-90" />
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex rounded-sm border border-gold px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-gold hover:text-navy-deep"
+              >
+                Discuss your event
+              </a>
             </div>
           </div>
         </section>
