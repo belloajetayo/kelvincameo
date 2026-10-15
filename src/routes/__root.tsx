@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  redirect,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -74,6 +75,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  beforeLoad: () => {
+    throw redirect({
+      href: "https://kelvincameo.com/hospitality",
+      statusCode: 301,
+    });
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
